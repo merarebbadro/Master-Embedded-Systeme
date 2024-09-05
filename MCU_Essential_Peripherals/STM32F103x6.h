@@ -99,12 +99,12 @@ typedef struct
 
 typedef struct
 {
-	 vuint32_t IMR;
-	 vuint32_t EMR;
-	 vuint32_t RTSR;
-	 vuint32_t FTSR;
-	 vuint32_t SWIER;
-	 vuint32_t PR;
+	 uint32_t IMR;
+	 uint32_t EMR;
+	 uint32_t RTSR;
+	 uint32_t FTSR;
+	 uint32_t SWIER;
+	 uint32_t PR;
 }EXTI_TypeDef;
 
 //-*-*-*-*-*-*-*-*-*-*-*-
@@ -117,7 +117,7 @@ typedef struct
 #define GPIOD			((GPIO_TypeDef*)GPIOD_BASE)
 #define GPIOE			((GPIO_TypeDef*)GPIOE_BASE)
 
-#define RCC				((RCC_TypeDef*)RCC_BASE)
+#define RCC			((RCC_TypeDef*)RCC_BASE)
 
 #define EXTI			((EXTI_TypeDef*)EXTI_BASE)
 
@@ -128,12 +128,12 @@ typedef struct
 //-*-*-*-*-*-*-*-*-*-*-*
 
 #define RCC_GPIOA_CLK_EN()	      (RCC->APB2ENR|= 1<<2)
-#define RCC_GPIOB_CLK_EN()        (RCC->APB2ENR|= 1<<3)
+#define RCC_GPIOB_CLK_EN()            (RCC->APB2ENR|= 1<<3)
 #define RCC_GPIOC_CLK_EN()	      (RCC->APB2ENR|= 1<<4)
 #define RCC_GPIOD_CLK_EN()	      (RCC->APB2ENR|= 1<<5)
 #define RCC_GPIOE_CLK_EN()	      (RCC->APB2ENR|= 1<<6)
 
-#define AFIO_CLK_EN()		          (RCC->APB2ENR|= 1<<0))
+#define AFIO_CLK_EN()		      (RCC->APB2ENR|= 1<<0))
 
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Generic Macros:
