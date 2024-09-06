@@ -45,36 +45,40 @@
 #define GPIOD_BASE          (APB2_BUS_BASE + 0x00001400UL)
 #define GPIOE_BASE          (APB2_BUS_BASE + 0x00001800UL)
 
+
+
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Peripheral register: RCC
 //-*-*-*-*-*-*-*-*-*-*-*
 
 typedef struct
 {
-	 uint32_t CR;
-	 uint32_t CFGR;
-	 uint32_t CIR;
-	 uint32_t APB2RSTR;
-	 uint32_t APB1RSTR;
-	 uint32_t AHBENR;
-	 uint32_t APB2ENR;
-	 uint32_t APB1ENR;
-	 uint32_t BDCR;
+	volatile uint32_t CR;
+	volatile uint32_t CFGR;
+	volatile uint32_t CIR;
+	volatile uint32_t APB2RSTR;
+	volatile uint32_t APB1RSTR;
+	volatile uint32_t AHBENR;
+	volatile uint32_t APB2ENR;
+	volatile uint32_t APB1ENR;
+	volatile uint32_t BDCR;
+	volatile uint32_t CSR;
+
 }RCC_TypeDef;
 
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Peripheral register: GPIO
 //-*-*-*-*-*-*-*-*-*-*-*
-
 typedef struct
 {
-	 uint32_t CRL;
-	 uint32_t CRH;
-	 uint32_t IDR;
-	 uint32_t ODR;
-	 uint32_t BSRR;
-	 uint32_t BRR;
-	 uint32_t LCKR;
+	volatile uint32_t CRL;
+	volatile uint32_t CRH;
+	volatile uint32_t IDR;
+	volatile uint32_t ODR;
+	volatile uint32_t BSRR;
+	volatile uint32_t BRR;
+	volatile uint32_t LCKR;
+
 }GPIO_TypeDef;
 
 //-*-*-*-*-*-*-*-*-*-*-*-
@@ -83,14 +87,15 @@ typedef struct
 
 typedef struct
 {
-	 uint32_t EVCR;
-	 uint32_t MAPR;
-	 uint32_t EXTICR0;
-	 uint32_t EXTICR1;
-	 uint32_t EXTICR2;
-	 uint32_t EXTICR3;
-	 uint32_t  RESERVED0;
-	 uint32_t MAPR2;
+	volatile uint32_t    EVCR;
+	volatile uint32_t    MAPR;
+	volatile uint32_t EXTICR1;
+	volatile uint32_t EXTICR2;
+	volatile uint32_t EXTICR3;
+	volatile uint32_t EXTICR4;	 //at 0x14
+	uint32_t 	Reserved0;      //at 0x18
+	volatile uint32_t   MAPR2;	 //at 0x1C
+
 }AFIO_TypeDef;
 
 //-*-*-*-*-*-*-*-*-*-*-*-
@@ -99,12 +104,13 @@ typedef struct
 
 typedef struct
 {
-	 uint32_t IMR;
-	 uint32_t EMR;
-	 uint32_t RTSR;
-	 uint32_t FTSR;
-	 uint32_t SWIER;
-	 uint32_t PR;
+	volatile uint32_t IMR;
+	volatile uint32_t EMR;
+	volatile uint32_t RSTR;
+	volatile uint32_t FTSR;
+	volatile uint32_t SWIER;
+	volatile uint32_t PR;
+
 }EXTI_TypeDef;
 
 //-*-*-*-*-*-*-*-*-*-*-*-
