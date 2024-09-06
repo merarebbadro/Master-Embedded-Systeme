@@ -66,14 +66,14 @@ typedef struct
 //7: Alternate function output Open-drain
 //8: Alternate function input
 #define GPIO_MODE_ANALOG				    0x00000000u /* Analog mode */
-#define GPIO_MODE_INPUT_FLO				  0x00000001u /* Floating input */
-#define GPIO_MODE_INPUT_PU				  0x00000002u /* Input with pull-up */
-#define GPIO_MODE_INPUT_PD				  0x00000003u /* Input with pull-down */
-#define GPIO_MODE_OUTPUT_PP			    0x00000004u /* General purpose output push-pull */
-#define GPIO_MODE_OUTPUT_OD				  0x00000005u /* General purpose output Open-drain */
-#define GPIO_MODE_OUTPUT_AF_PP			0x00000006u /* Alternate function output Push-pull */
-#define GPIO_MODE_OUTPUT_AF_OD			0x00000007u /* Alternate function output Open-drain */
-#define GPIO_MODE_AF_INPUT				  0x00000008u /* Alternate function input */
+#define GPIO_MODE_INPUT_FLO				    0x00000001u /* Floating input */
+#define GPIO_MODE_INPUT_PU				    0x00000002u /* Input with pull-up */
+#define GPIO_MODE_INPUT_PD				    0x00000003u /* Input with pull-down */
+#define GPIO_MODE_OUTPUT_PP			            0x00000004u /* General purpose output push-pull */
+#define GPIO_MODE_OUTPUT_OD				    0x00000005u /* General purpose output Open-drain */
+#define GPIO_MODE_OUTPUT_AF_PP			            0x00000006u /* Alternate function output Push-pull */
+#define GPIO_MODE_OUTPUT_AF_OD			            0x00000007u /* Alternate function output Open-drain */
+#define GPIO_MODE_AF_INPUT				    0x00000008u /* Alternate function input */
 
 //@ref GPIO_SPEED_define
 //1: Output mode, max speed 10 MHz.
