@@ -51,7 +51,7 @@ typedef struct
 #define GPIO_PIN_13						((uint16_t)0x2000) /* Pin 13 selected */
 #define GPIO_PIN_14						((uint16_t)0x4000) /* Pin 14 selected */
 #define GPIO_PIN_15						((uint16_t)0x8000) /* Pin 15 selected */
-#define GPIO_PIN_16						((uint16_t)0xFFFF) /* All pins selected */
+#define GPIO_PIN_ALL						((uint16_t)0xFFFF) /* All pins selected */
 
 #define GPIO_PIN_MASK					0x0000FFFFu /* PIN mask for assert test */
 
