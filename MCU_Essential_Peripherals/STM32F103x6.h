@@ -140,6 +140,64 @@ typedef struct
 #define RCC_GPIOE_CLK_EN()	      (RCC->APB2ENR|= 1<<6)
 
 #define AFIO_CLK_EN()		      (RCC->APB2ENR|= 1<<0))
+//-*-*-*-*-*-*-*-*-*-*-*-
+//Interrupt Vector Table:
+//-*-*-*-*-*-*-*-*-*-*-*
+/*
+ * EXTI
+ */
+#define EXTI0_IRQ		6
+#define EXTI1_IRQ		7
+#define EXTI2_IRQ		8
+#define EXTI3_IRQ		9
+#define EXTI4_IRQ		10
+#define EXTI5_IRQ		23
+#define EXTI6_IRQ		23
+#define EXTI7_IRQ		23
+#define EXTI8_IRQ		23
+#define EXTI9_IRQ		23
+#define EXTI10_IRQ		40
+#define EXTI11_IRQ		40
+#define EXTI12_IRQ		40
+#define EXTI13_IRQ		40
+#define EXTI14_IRQ		40
+#define EXTI15_IRQ		40
+
+//-*-*-*-*-*-*-*-*-*-*-*--*-*-*--*-*-*-
+//NVIC IRQ Enable/Disable Macros
+//-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-
+
+/*  Enable Interrupt Requests  */
+
+// We Started From IRQ6 Due To DataSheet
+// ISER : Interrupt Set Register
+
+#define NVIC_IRQ6_EXTI0_EN()			(NVIC_ISER0 |= 1<<6)				// EXTI0 ---> PIN6 in NVIC
+#define NVIC_IRQ7_EXTI1_EN()			(NVIC_ISER0 |= 1<<7)				// EXTI1 ---> PIN7 in NVIC
+#define NVIC_IRQ8_EXTI2_EN()			(NVIC_ISER0 |= 1<<8)				// EXTI2 ---> PIN8 in NVIC
+#define NVIC_IRQ9_EXTI3_EN()			(NVIC_ISER0 |= 1<<9)				// EXTI3 ---> PIN9 in NVIC
+#define NVIC_IRQ10_EXTI4_EN()			(NVIC_ISER0 |= 1<<10)				// EXTI4 ---> PIN10 in NVIC
+#define NVIC_IRQ23_EXTI5_9_EN()			(NVIC_ISER0 |= 1<<23)				// EXTI5, EXTI6, EXTI7, EXTI8, EXTI9 ---> PIN23 in NVIC
+
+// 40 - 32 = 8
+#define NVIC_IRQ40_EXTI10_15_EN()		(NVIC_ISER1 |= 1<<8)				// EXTI10, EXTI11, EXTI12, EXTI13, EXTI14, EXTI15
+
+
+/* Disable Interrupt Requests */
+
+// We Started From IRQ6 Due To DataSheet
+// ICER : Interrupt Clear Register
+
+#define NVIC_IRQ6_EXTI0_DI()			(NVIC_ICER0 |= 1<<6)				// EXTI0 ---> PIN6 in NVIC
+#define NVIC_IRQ7_EXTI1_DI()			(NVIC_ICER0 |= 1<<7)				// EXTI1 ---> PIN7 in NVIC
+#define NVIC_IRQ8_EXTI2_DI()			(NVIC_ICER0 |= 1<<8)				// EXTI2 ---> PIN8 in NVIC
+#define NVIC_IRQ9_EXTI3_DI()			(NVIC_ICER0 |= 1<<9)				// EXTI3 ---> PIN9 in NVIC
+#define NVIC_IRQ10_EXTI4_DI()			(NVIC_ICER0 |= 1<<10)				// EXTI4 ---> PIN10 in NVIC
+#define NVIC_IRQ23_EXTI5_9_DI()			(NVIC_ICER0 |= 1<<23)				// EXTI5, EXTI6, EXTI7, EXTI8, EXTI9 ---> PIN23 in NVIC
+
+// 40 - 32 = 8
+#define NVIC_IRQ40_EXTI10_15_DI()		(NVIC_ICER1 |= 1<<8)				// EXTI10, EXTI11, EXTI12, EXTI13, EXTI14, EXTI15
+																			//  ---> PIN40 in NVIC
 
 //-*-*-*-*-*-*-*-*-*-*-*-
 //Generic Macros:
