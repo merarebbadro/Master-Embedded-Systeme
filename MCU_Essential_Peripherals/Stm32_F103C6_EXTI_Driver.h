@@ -22,7 +22,7 @@
 typedef struct
 {
 	uint16_t		   EXTI_InputLineNumber;
-	GPIO_TypeDef*	 GPIO_Port;
+	GPIO_TypeDef*	           GPIO_Port;
 	uint16_t		   GPIO_PIN;
 	uint16_t		   IVT_IRQ_Number;
 
@@ -33,10 +33,10 @@ typedef struct
 	EXTI_GPIO_Mapping_t 	EXTI_PIN;		//Specifies the External Interrupt GPIO Mapping
 											//This parameter must be set based on @ref EXTI_define
 
-	uint8_t					      Trigger_Case;	//Specifies RISING or FALLING or both triggers
+	uint8_t                  Trigger_Case;	//Specifies RISING or FALLING or both triggers
 											//This parameter must be set based on @ref EXTI_Trigger_define
 
-	uint8_t				      	IRQ_EN;			//Enable or Disable the EXTI IRQ (that will enable the IRQ MASK in EXTI and also on the NVIC Interrupt Controller)
+	uint8_t		         IRQ_EN;			//Enable or Disable the EXTI IRQ (that will enable the IRQ MASK in EXTI and also on the NVIC Interrupt Controller)
 											//This parameter must be set based on @ref EXTI_IRQ_define
 
 	void(*P_IRQ_CallBack)(void);			//Set the C Function() which will be called when IRQ happens
@@ -58,12 +58,12 @@ typedef struct
 #define EXTI7			7
 #define EXTI8			8
 #define EXTI9			9
-#define EXTI10		10
-#define EXTI11		11
-#define EXTI12		12
-#define EXTI13		13
-#define EXTI14		14
-#define EXTI15		15
+#define EXTI10		        10
+#define EXTI11		        11
+#define EXTI12		        12
+#define EXTI13		        13
+#define EXTI14		        14
+#define EXTI15		        15
 
 //===============================================
 //@ref Module_REF_NAME_define
@@ -181,14 +181,14 @@ typedef struct
 
 //===============================================
 //@ref EXTI_Trigger_define
-#define EXTI_Trigger_RISING					0
-#define EXTI_Trigger_FALLING				1
+#define EXTI_Trigger_RISING			0
+#define EXTI_Trigger_FALLING			1
 #define EXTI_Trigger_RISING_AND_FALLING		2
 
 //===============================================
 //@ref EXTI_IRQ_define
-#define EXTI_IRQ_Enable						1
-#define EXTI_IRQ_Disable					0
+#define EXTI_IRQ_Enable				1
+#define EXTI_IRQ_Disable			0
 
 /*
  * ===============================================
