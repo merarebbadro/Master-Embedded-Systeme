@@ -33,6 +33,15 @@
 
 #define RCC_BASE            (AHB_BUS_BASE + 0x00001000UL)
 
+//NVIC register map
+#define NVIC_Base		 0xE000E100UL
+#define NVIC_ISER0		*(volatile uint32_t *)(NVIC_Base + 0x0)
+#define NVIC_ISER1		*(volatile uint32_t *)(NVIC_Base + 0x4)
+#define NVIC_ISER2		*(volatile uint32_t *)(NVIC_Base + 0x8)
+#define NVIC_ICER0		*(volatile uint32_t *)(NVIC_Base + 0x80)
+#define NVIC_ICER1		*(volatile uint32_t *)(NVIC_Base + 0x84)
+#define NVIC_ICER2		*(volatile uint32_t *)(NVIC_Base + 0x88)
+
 //-----------------------------
 //Base addresses for APB2 Peripherals
 //-----------------------------
