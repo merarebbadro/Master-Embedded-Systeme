@@ -1,0 +1,18 @@
+//Move Immediate to Register
+__asm("nop\n\t nop \n\t nop"); // Three NOP instructions for a delay
+
+// Move the value of VAL1 to R0 register using inline assembly
+__asm("mov R0,%0" 
+      :"=r"(VAL1) );
+
+__asm("nop\n\t nop \n\t nop"); // Three NOP instructions for a delay
+//-----------------------------//-----------------------------//-----------------------------
+
+__asm("nop\n\t nop \n\t nop");
+// mov R0,VAL1
+__asm("add %0,%1,%2"
+      : "=r" (VAL3)               // output
+      : "r" (VAL1),
+        "r" (VAL2)); 
+__asm("nop\n\t nop \n\t nop");
+//-----------------------------//-----------------------------//-----------------------------
